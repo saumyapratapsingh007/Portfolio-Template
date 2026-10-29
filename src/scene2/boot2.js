@@ -1,0 +1,1 @@
+export async function initUniverse(){return {section:document.getElementById("universe")};}
