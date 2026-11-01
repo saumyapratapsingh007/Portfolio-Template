@@ -37,3 +37,13 @@ Original project remains unchanged in the 2026-10-20 workspace.
 - Packaged as Lord_Nishant_XMR21_Updated.zip with this checkpoint log and START-HERE.md.
 
 If interrupted again, record the interrupted operation and verify filesystem state before retrying.
+
+## 30 October 2026 — actual sample reels
+- Added Ad1.mp4 to card 1 with Instagram reel DdePECaoYOP.
+- Added Ad2.mp4 to card 2 with Instagram reel Dd4Gnpgy0P7.
+- Added Ad3.mp4 to card 3 with Instagram reel De4cimEozAn.
+- Mapping follows the numbered filenames and the user's numbered links.
+- Filtered video listing returned InvalidActionArgumentsError; unfiltered recent listing succeeded and identified all three uploads.
+- Remote video downloads failed with DNS error 'No such host is known'. Resolved by locating exact-size local copies in Desktop/NIshant-Portfolio and copying them into public/media.
+- Read-only Git remote check reported dubious ownership. No Git trust settings changed and no push performed.
+- No user interruption occurred during this update. Existing browser visual verification limitation remains.
