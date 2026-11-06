@@ -8,13 +8,13 @@
 //   5  post      grain and vignette
 //
 // The clock is drawn LAST and additively, so its beam falls over the rail
-// rather than sitting behind it — the light has to touch the things it is
+// rather than sitting behind it â€” the light has to touch the things it is
 // pointing at or the connection reads as decoration.
 //
 // The figure is the exception to the single canvas: on a desktop frame he and
 // the near ring arcs render on a SECOND, transparent canvas stacked over the
-// DOM card deck, so he stands in front of the timeline — cards behind his
-// shoulders — while staying lit by this room's shaders. Portrait (and any
+// DOM card deck, so he stands in front of the timeline â€” cards behind his
+// shoulders â€” while staying lit by this room's shaders. Portrait (and any
 // browser that refuses a second context) keeps him on the main canvas.
 //
 // The six cards themselves are DOM, not canvas: each carries real text that has
@@ -75,7 +75,7 @@ export class Chrono {
   async load() {
     const [grain, fig] = await Promise.all([
       loadImage('public/tex/grain.png'),
-      loadImage('public/placeholders/portrait.svg'),
+      loadImage('public/people/lord-nishant-fullbody.png'),
     ]);
     upload(this.gl, this.tex.grain, grain);
     upload(this.gl, this.tex.figure, fig);
@@ -131,13 +131,13 @@ export class Chrono {
     // clamped as well as damped: u indexes the years, and a stalled tab can
     // hand the loop a wild dt, which would otherwise let the spring overshoot
     // out of range and swing the hand somewhere meaningless
-    this.u = clamp(damp(this.u, wanted, 4.2, dt), 0, YEARS.length - 1);
+    this.u = clamp(damp(this.u, wanted, 15, dt), 0, YEARS.length - 1);
     this.active = Math.max(0, Math.min(YEARS.length - 1, Math.round(this.u)));
     this.heat = damp(this.heat, s.energy, 3.0, dt);
 
     const p = this.pointer;
-    p.x = damp(p.x, p.inside ? p.tx : 0, 2.6, dt);
-    p.y = damp(p.y, p.inside ? p.ty : 0, 2.6, dt);
+    p.x = damp(p.x, p.inside ? p.tx : 0, 7.0, dt);
+    p.y = damp(p.y, p.inside ? p.ty : 0, 7.0, dt);
     const par = s.live ? 1 : 0;
     // the camera drifts a hair against the pointer; enough for depth, not
     // enough to notice as an effect
@@ -260,7 +260,7 @@ export class Chrono {
 
   /**
    * The figure and the near ring arcs. On a desktop frame these draw on the
-   * front context — the transparent canvas stacked over the card deck — so he
+   * front context â€” the transparent canvas stacked over the card deck â€” so he
    * stands IN FRONT of the timeline, cards passing behind his shoulders, the
    * mechanism's near side still crossing in front of his shoes. In portrait
    * the single staged card is the content and he belongs behind it, so the
@@ -307,7 +307,7 @@ export class Chrono {
       g.drawArrays(g.TRIANGLE_STRIP, 0, 4);
     }
 
-    // the near arcs of the floor, over his feet — he stands INSIDE the
+    // the near arcs of the floor, over his feet â€” he stands INSIDE the
     // mechanism: far side behind him, near side in front
     g.blendFunc(g.ONE, g.ONE);
     {
@@ -325,7 +325,7 @@ export class Chrono {
       g.bindVertexArray(null);
     } else {
       // on the main canvas the quad VAO must STAY bound and the blend mode
-      // restored — the clock and post passes draw right after this
+      // restored â€” the clock and post passes draw right after this
       g.blendFunc(g.ONE, g.ONE_MINUS_SRC_ALPHA);
     }
   }

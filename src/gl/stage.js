@@ -21,7 +21,9 @@ import {
   VERT, FRAG_BG, FRAG_LETTER, FRAG_FIGURE, FRAG_SHADOW, FRAG_POST,
 } from './shaders.js';
 
-const INK = [0.76, 0.66, 0.49];    // #DE1B1C, sampled from the artwork
+// LORD is cool white, NISHANT is the signature cinematic red.
+const INK_LORD = [247 / 255, 243 / 255, 239 / 255];
+const INK_NISHANT = [222 / 255, 27 / 255, 28 / 255];
 
 export class Stage {
   constructor(canvas) {
@@ -144,7 +146,7 @@ export class Stage {
       gl.useProgram(p.p);
       gl.uniform1i(p.u.uGlyph, bind(gl, this.tex.glyph, 0));
       gl.uniform1i(p.u.uGrunge, bind(gl, this.tex.grunge, 1));
-      gl.uniform3f(p.u.uInk, INK[0], INK[1], INK[2]);
+
       // the distressed surface is sampled in SCREEN space so it reads as one
       // continuous worn sheet across all seven letters, not seven tiles
       gl.uniform2f(p.u.uGrungeScale, aspect * this.wearScale, this.wearScale);
@@ -152,12 +154,44 @@ export class Stage {
       gl.uniform1f(p.u.uWear, this.wear);
       gl.uniform1f(p.u.uWearGain, this.wearGain);
 
+      // Magnify each whole word around its own centre without replacing the shader.
+      const lens = window.__textLensPointer;
+      const canvasBox = this.canvas.getBoundingClientRect();
+      this.lensScales ||= [1, 1];
+      const wordBounds = [[0, 4], [5, this.word.letters.length]].map(([start, end], group) => {
+        const rects = Array.from({ length: end - start }, (_, n) => this.letterRect(start + n));
+        const left = Math.min(...rects.map(r => r[0]));
+        const top = Math.min(...rects.map(r => r[1]));
+        const right = Math.max(...rects.map(r => r[0] + r[2]));
+        const bottom = Math.max(...rects.map(r => r[1] + r[3]));
+        let target = 1;
+        if (lens?.active && canvasBox.width && canvasBox.height) {
+          const sx = canvasBox.width / W, sy = canvasBox.height / H;
+          const x1 = canvasBox.left + (left + px * 14 * dpr) * sx;
+          const x2 = canvasBox.left + (right + px * 14 * dpr) * sx;
+          const y1 = canvasBox.top + (top + py * 9 * dpr) * sy;
+          const y2 = canvasBox.top + (bottom + py * 9 * dpr) * sy;
+          const distance = Math.hypot(Math.max(x1 - lens.x, 0, lens.x - x2), Math.max(y1 - lens.y, 0, lens.y - y2));
+          const near = Math.max(0, 1 - distance / lens.radius);
+          target += .12 * near * near * (3 - 2 * near);
+        }
+        this.lensScales[group] += (target - this.lensScales[group]) * .15;
+        return { cx: (left + right) / 2, cy: (top + bottom) / 2, scale: this.lensScales[group] };
+      });
       for (let i = 0; i < this.word.letters.length; i++) {
         const L = this.word.letters[i];
+        // Space after LORD has no visible glyph. Each following glyph is red.
+        const ink = i >= 5 ? INK_NISHANT : INK_LORD;
+        gl.uniform3f(p.u.uInk, ink[0], ink[1], ink[2]);
         const s = state.letters[i];
         if (s.opacity <= 0.001) continue;
         const r = this.letterRect(i);
         const lift = s.dy * r[3];
+        const lensWord = wordBounds[i >= 5 ? 1 : 0];
+        r[0] = lensWord.cx + (r[0] - lensWord.cx) * lensWord.scale;
+        r[1] = lensWord.cy + (r[1] - lensWord.cy) * lensWord.scale;
+        r[2] *= lensWord.scale;
+        r[3] *= lensWord.scale;
         gl.uniform1f(p.u.uOpacity, s.opacity);
         gl.uniform1f(p.u.uReveal, s.reveal);
         gl.uniform1f(p.u.uSoften, s.soften * 0.026 * (L.v1 - L.v0));

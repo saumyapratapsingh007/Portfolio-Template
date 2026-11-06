@@ -28,13 +28,13 @@ export class Finale {
     this.texF = { man: texture(glF), grain: texture(glF, { wrap: 'repeat' }) };
     this.par = { x: 0, y: 0 };
     // the man's box in frame px, from fin.json - set by boot6
-    this.manBox = [580, 170, 450, 730];
+    this.manBox = [560, 96, 480, 720];
   }
 
   async load() {
     const [plate, man, grain] = await Promise.all([
       loadImage('public/placeholders/closing.svg'),
-      loadImage('public/placeholders/portrait.svg'),
+      loadImage('public/people/lord-nishant-fullbody.png'),
       loadImage('public/tex/grain.png'),
     ]);
     upload(this.back.gl, this.texB.plate, plate);

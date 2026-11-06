@@ -10,36 +10,12 @@
 // the same maths.
 
 export const YEARS = [
-  {
-    year: 2021,
-    key: '[Your milestone]',
-    lines: ['Your story here', 'Dates are placeholders'],
-  },
-  {
-    year: 2022,
-    key: '[Your milestone]',
-    lines: ['Your story here', 'Dates are placeholders'],
-  },
-  {
-    year: 2023,
-    key: '[Your milestone]',
-    lines: ['Your story here', 'Dates are placeholders'],
-  },
-  {
-    year: 2024,
-    key: '[Your milestone]',
-    lines: ['Your story here', 'Dates are placeholders'],
-  },
-  {
-    year: 2025,
-    key: '[Your milestone]',
-    lines: ['Your story here', 'Dates are placeholders'],
-  },
-  {
-    year: 2026,
-    key: '[Your milestone]',
-    lines: ['Your story here', 'Dates are placeholders'],
-  },
+  { year: '01', image: 'public/years/5ab17e20-1c9c-408f-9ec5-d16f07def661.png', key: 'THE EDITOR', lines: ['Video Editing', '5+ Years'] },
+  { year: '02', image: 'public/years/e4ff61e9-3a69-4141-991d-4a0426868e03.png', key: 'THE FILMMAKER', lines: ['AI Filmmaking', 'Cinematography'] },
+  { year: '03', image: 'public/years/207dec81-d534-458f-9a32-36e4126de018.png', key: 'THE ARTIST', lines: ['AI Art & Design', 'Graphic Designing'] },
+  { year: '04', image: 'public/years/83c053db-063e-43e3-b297-d717fd12e972.png', key: 'THE DIRECTOR', lines: ['Script Writing', 'Direction / Storyboards'] },
+  { year: '05', image: 'public/years/7719b017-1b6e-4239-b189-f5ae87114bda.png', key: 'THE CREATOR', lines: ['Brand Shoots', 'Photography / Drone'] },
+  { year: '06', image: 'public/years/d4a262d0-635c-4ae0-85c9-7a77459787d0.png', key: 'THE PRESENT', lines: ['StoryLab', 'AI Creator'] },
 ];
 
 // measured in the 1280x720 reference, stored as fractions of the frame
