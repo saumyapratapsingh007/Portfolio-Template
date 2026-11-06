@@ -93,7 +93,7 @@ export async function initFinale() {
     if (!state.running) return;
     const dt = Math.min(0.05, (now - state.last) / 1000 || 0.016);
     state.last = now;
-    const t = reduced || section.dataset.directEntry === 'true' ? T6.live + 2 : (now - state.started) / 1000;
+    const t = reduced ? T6.live + 2 : (now - state.started) / 1000;
     const s = sample6(t);
 
     ptr.x = damp(ptr.x, ptr.inside ? ptr.tx : 0, 2.6, dt);

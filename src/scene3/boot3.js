@@ -25,7 +25,7 @@ export async function initChrono() {
   }
 
   // The figure's layer: a second, transparent context on the canvas stacked
-  // over the card deck, so he stands in front of the timeline. Optional â€” if
+  // over the card deck, so he stands in front of the timeline. Optional — if
   // the browser refuses another context he simply draws behind, as before.
   const frontCanvas = document.getElementById('chronoFront');
   const glFront = frontCanvas ? createGL(frontCanvas, { alpha: true }) : null;
@@ -48,10 +48,10 @@ export async function initChrono() {
     el.type = 'button';
     el.className = 'yr';
     el.dataset.i = String(i);
-    el.setAttribute('aria-label', `${y.year} â€” ${y.key}`);
+    el.setAttribute('aria-label', `${y.year} — ${y.key}`);
     el.innerHTML =
       `<span class="yr__frame">`
-      + `<img class="yr__img" src="${y.image}" alt="" `
+      + `<img class="yr__img" src="public/placeholders/project-${i+1}.svg" alt="" `
       + `loading="lazy" decoding="async">`
       + `<span class="yr__body">`
       + `<span class="yr__year">${y.year}</span>`
@@ -67,7 +67,7 @@ export async function initChrono() {
   });
 
   // The year numerals are the tap targets on a phone, where only one card is
-  // on stage at a time â€” so they are real buttons rather than decorative text.
+  // on stage at a time — so they are real buttons rather than decorative text.
   const labels = YEARS.map((y, i) => {
     const el = document.createElement('button');
     el.type = 'button';
@@ -92,7 +92,7 @@ export async function initChrono() {
     for (let i = 0; i < cards.length; i++) {
       const c = L.cards[i];
       const el = cards[i];
-      // The reference's cards are ~8-12% of frame width â€” faithful, but at
+      // The reference's cards are ~8-12% of frame width — faithful, but at
       // that size the body copy is unreadable on a real screen (it needed a 3x
       // zoom to read in the poster itself). They are scaled up just enough to
       // be legible while keeping the measured progression and spacing, so the
@@ -128,19 +128,13 @@ export async function initChrono() {
     const r = canvas.getBoundingClientRect();
     const px = e.clientX - r.left;
     const py = e.clientY - r.top;
-    if (px < 0 || py < 0 || px > r.width || py > r.height) {
-      chrono.pointer.inside = false;
-      return;
-    }
     chrono.pointer.tx = (px / r.width) * 2 - 1;
     chrono.pointer.ty = (py / r.height) * 2 - 1;
     chrono.pointer.inside = true;
     const { u, dist } = timeAt(chrono.layout, px, py);
-    // Increase local gain without shifting any of the six timeline positions.
-    const enhanced = u + 0.28 * Math.sin(2 * Math.PI * u) / (2 * Math.PI);
-    const card = e.target.closest('.yr');
-    if (card) setTarget(Number(card.dataset.i));
-    else if (dist < r.height * 0.55) setTarget(enhanced);
+    // far from the rail the visitor is not aiming at anything; hold the last
+    // year rather than swinging the hand at stray movement
+    if (dist < r.height * 0.55) setTarget(u);
   }, { passive: true });
 
   section.addEventListener('pointerleave', () => { chrono.pointer.inside = false; });
@@ -158,7 +152,7 @@ export async function initChrono() {
     if (!state.running) return;
     const dt = Math.min(0.05, (now - state.last) / 1000 || 0.016);
     state.last = now;
-    const t = reduced || section.dataset.directEntry === 'true' ? T3.live + 2 : (now - state.started) / 1000;
+    const t = reduced ? T3.live + 2 : (now - state.started) / 1000;
     const s = chrono.render(t, dt);
 
     if (s) {

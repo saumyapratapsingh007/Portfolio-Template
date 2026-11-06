@@ -239,7 +239,7 @@ function degrade(reason) {
   boot.classList.add('is-done');
   for (const [, name] of CUES) root.classList.add(`is-${name}`);
   document.querySelector('.stage-wrap').insertAdjacentHTML('afterbegin',
-    '<div class="fallback"><p><span style="color:#f7f3ef">LORD</span> <span style="color:#de1b1c">NISHANT</span></p>'
+    '<div class="fallback"><p>GIREESH</p>'
     + '<small>Welcome to my world</small></div>');
 }
 

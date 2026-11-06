@@ -1,1 +1,27 @@
 shots/
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Dependency and build caches
+node_modules/
+dist/
+build/
+out/
+coverage/
+.cache/
+.next/
+.vite/
+__pycache__/
+*.py[cod]
+
+# Local tooling output
+*.log
+.DS_Store
+Thumbs.db

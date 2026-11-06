@@ -53,11 +53,10 @@ export async function initGallery() {
     el.style.setProperty('--tint',
       `rgba(${c.tint.map((v, k) => k < 3 ? Math.round(v * 255) : v)}, 0.5)`);
     el.style.zIndex = String(10 + Math.round((1 - c.depth) * 20));
-    el.style.setProperty('--ratio', `${c.box[2]} / ${c.box[3]}`);
     el.style.setProperty('--i', String(i));   // float dephasing
     el.innerHTML = `<span class="g-card__in">`
-      + `<img src="public/disciplines/category-${i+1}.jpg" alt="" `
-      + `draggable="false" loading="eager" decoding="async"><span class="g-card__title">${c.title}</span></span>`;
+      + `<img src="public/placeholders/project-${i+1}.svg" alt="" `
+      + `draggable="false" loading="eager" decoding="async"></span>`;
     deck.appendChild(el);
     return el;
   });
@@ -103,15 +102,9 @@ export async function initGallery() {
     // The figure keeps the plate's own cover mapping in EVERY orientation:
     // he must sit exactly over the hole the extractor filled behind him, or
     // the fill's soft edge reads as a box around his silhouette.
-    // Keep the owner's full-length portrait undistorted, anchored to the same stage position.
-    const portraitWidth = PERSON.w * 1.68;
-    const portraitHeight = portraitWidth * (1536 / 1024);
-    const centerX = PERSON.x + PERSON.w / 2;
-    const groundY = PERSON.y + PERSON.h;
-    person.style.width = `${portraitWidth * f.s}px`;
-    person.style.height = `${portraitHeight * f.s}px`;
-    person.style.left = `${(centerX - portraitWidth / 2) * f.s + f.ox}px`;
-    person.style.top = `${(groundY - portraitHeight) * f.s + f.oy}px`;
+    person.style.width = `${PERSON.w * f.s}px`;
+    person.style.left = `${PERSON.x * f.s + f.ox}px`;
+    person.style.top = `${PERSON.y * f.s + f.oy}px`;
   }
   place();
   let resizeId;
@@ -147,7 +140,7 @@ export async function initGallery() {
     if (!state.running) return;
     const dt = Math.min(0.05, (now - state.last) / 1000 || 0.016);
     state.last = now;
-    const t = reduced || section.dataset.directEntry === 'true' ? T4.live + 2 : (now - state.started) / 1000;
+    const t = reduced ? T4.live + 2 : (now - state.started) / 1000;
     const s = sample4(t);
 
     // scroll dolly: progress of the pin through its extra scroll room

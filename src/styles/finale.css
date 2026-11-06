@@ -215,7 +215,7 @@
 .fin.is-fallback #finBack,
 .fin.is-fallback #finMan { display: none; }
 .fin.is-fallback {
-  background: #000 url('../../public/placeholders/closing.svg') center / cover no-repeat;
+  background: #000 url('../../public/fin/plate.jpg') center / cover no-repeat;
 }
 .fin.is-set .f-cap,
 .fin.is-set .fin__bar { opacity: 1; transform: none; filter: none; }

@@ -3,14 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Lord Nishant | AI Filmmaker &amp; AI Artist</title>
-<meta name="description" content="Explore Lord Nishant’s creative portfolio featuring AI filmmaking, AI art, video editing, graphic design, and cinematic storytelling.">
+<title>YOUR NAME — Artist · Creative · Storyteller</title>
+<meta name="description" content="Welcome to my world. Portfolio of [Your Name] — artist, creative, storyteller.">
 <meta name="theme-color" content="#000000">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Lord Nishant | AI Filmmaker &amp; AI Artist">
-<meta property="og:description" content="AI filmmaking, AI art, video editing, graphic design and cinematic storytelling by Lord Nishant.">
-<meta name="twitter:card" content="summary">
-<meta property="og:image" content="public/people/lord-nishant-fullbody.png">
 
 <link rel="preload" href="public/fonts/anton-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="public/fonts/oswald-500.woff2" as="font" type="font/woff2" crossorigin>
@@ -20,18 +15,15 @@
 <link rel="stylesheet" href="src/styles/chrono.css">
 <link rel="stylesheet" href="src/styles/projects.css">
 <link rel="stylesheet" href="src/styles/finale.css">
-<link rel="stylesheet" href="custom.css">
-<link rel="stylesheet" href="src/styles/profile.css"><link rel="stylesheet" href="src/styles/updates.css"></head>
-<body id="top">
+<link rel="stylesheet" href="custom.css"></head>
+<body>
 
 <!-- the real heading, for search engines and screen readers; the visible
      wordmark is drawn on the canvas so video can be clipped inside its letters -->
-<h1 class="sr-only">Lord Nishant — AI Filmmaker, AI Artist, Video Editor, Graphic Designer.</h1>
+<h1 class="sr-only">YOUR NAME — Artist, Creative, Storyteller. Welcome to my world.</h1>
 
 <div class="stage-wrap">
   <canvas id="stage" aria-hidden="true"></canvas>
-  <!-- Owner-provided transparent full-length portrait; original animated wordmark remains underneath. -->
-  <img class="hero__portrait" src="public/people/lord-nishant-fullbody.png" alt="Portrait of Lord Nishant" draggable="false" fetchpriority="high">
 
   <!-- ------------------------------------------------------------------ -->
   <header class="hdr" id="hdr">
@@ -40,23 +32,23 @@
                 vector-effect="non-scaling-stroke"/>
     </svg>
 
-    <a class="hdr__mark" href="#" aria-label="Lord Nishant, home">
-      <span class="mark-word mark-word--lord">LORD</span><span class="mark-word mark-word--nishant">NISHANT</span>
+    <a class="hdr__mark" href="#" aria-label="[Your Name], home">
+      <span class="mark-word">YOUR NAME</span>
     </a>
 
     <span class="hdr__div" aria-hidden="true"></span>
 
     <p class="hdr__roles">
-      <span>AI Filmmaker</span><span>AI Artist</span><span>Video Editor</span>
+      <span>Filmmaker</span><span>Creative</span><span>Storyteller</span>
     </p>
 
     <nav class="hdr__nav" aria-label="Primary">
       <ul>
-        <li><a href="#top" class="is-active" data-nav>Home</a></li>
-        <li><a href="#gallery" data-nav>Work</a></li>
-        <li><a href="#profile" data-nav>About</a></li>
-        <li><a href="#chrono" data-nav>Journey</a></li>
-        <li><a href="#fin" data-nav>Contact</a></li>
+        <li><a href="#" class="is-active" data-nav>Home</a></li>
+        <li><a href="#" data-nav>Work</a></li>
+        <li><a href="#" data-nav>About</a></li>
+        <li><a href="#" data-nav>Journal</a></li>
+        <li><a href="#" data-nav>Contact</a></li>
       </ul>
     </nav>
 
@@ -65,7 +57,7 @@
       <span class="hdr__pips" aria-hidden="true"><i></i><i></i><i></i></span>
     </div>
 
-    <button class="hdr__burger" id="burger" aria-expanded="false" aria-controls="menu">
+    <button class="hdr__burger" id="burger" aria-expanded="false" aria-controls="hdrNavMobile">
       <span aria-hidden="true"></span><span aria-hidden="true"></span>
       <span class="sr-only">Menu</span>
     </button>
@@ -79,8 +71,8 @@
       <b class="welcome__dots">•••</b>
     </p>
 
-    <p class="chip chip--artist" id="chipArtist"><span>•<b class="identity--light">Lord</b> <b class="identity--red">Nishant</b>•</span></p>
-    <p class="chip chip--legend" id="chipLegend"><span>•AI FILMMAKER / AI ARTIST•</span></p>
+    <p class="chip chip--artist" id="chipArtist"><span>•Artist [Your Name]•</span></p>
+    <p class="chip chip--legend" id="chipLegend"><span>•AI Filmmaker•</span></p>
 
     <div class="arrows arrows--l" id="arrowsL"></div>
     <div class="arrows arrows--r" id="arrowsR"></div>
@@ -92,13 +84,13 @@
   <!-- ------------------------------------------------------------------ -->
   <nav class="menu" id="menu" aria-label="Primary, expanded" hidden>
     <ul>
-      <li><a href="#top" class="is-active" data-nav>Home</a></li>
-      <li><a href="#gallery" data-nav>Work</a></li>
-      <li><a href="#profile" data-nav>About</a></li>
-      <li><a href="#chrono" data-nav>Journey</a></li>
-      <li><a href="#fin" data-nav>Contact</a></li>
+      <li><a href="#" class="is-active" data-nav>Home</a></li>
+      <li><a href="#" data-nav>Work</a></li>
+      <li><a href="#" data-nav>About</a></li>
+      <li><a href="#" data-nav>Journal</a></li>
+      <li><a href="#" data-nav>Contact</a></li>
     </ul>
-    <p class="menu__tag">••• <span class="identity--light">Lord</span> <span class="identity--red">Nishant</span> •••</p>
+    <p class="menu__tag">••• Welcome to my world •••</p>
   </nav>
 
   <!-- ------------------------------------------------------------------ -->
@@ -111,7 +103,7 @@
 
   <noscript>
     <div class="fallback">
-      <p><span class="identity--light">LORD</span> <span class="identity--red">NISHANT</span></p>
+      <p>YOUR NAME</p>
       <small>This opening is an animated experience. Please enable JavaScript.</small>
     </div>
   </noscript>
@@ -131,20 +123,12 @@
       <h2 class="universe__name">The Creative<br>Universe</h2>
       <p class="universe__sub">Tools · Ideas · People · Impact</p>
     </header>
-
-    <button class="orbit-motion" id="orbitMotion" type="button" aria-label="Pause orbital animation">Pause orbit</button>
-    <div class="creative-orbit" aria-label="Creative disciplines revolving around Ideas into Cinema">
-      <div class="orbit-ring orbit-ring--outer" aria-hidden="true"></div>
-      <div class="orbit-ring orbit-ring--middle" aria-hidden="true"></div>
-      <div class="orbit-ring orbit-ring--inner" aria-hidden="true"></div>
-      <div class="orbit-core">IDEAS<br><em>into cinema.</em></div>
-      <div class="orbit-card orbit-0">AI FILMS</div>
-      <div class="orbit-card orbit-1">BRAND STORIES</div>
-      <div class="orbit-card orbit-2">VISUAL EFFECTS</div>
-      <div class="orbit-card orbit-3">SHORT FILMS</div>
-      <div class="orbit-card orbit-4">MUSIC VIDEOS</div>
-      <div class="orbit-card orbit-5">DOCUMENTARIES</div>
-    </div>
+    <ul class="sr-only">
+      <li>Figma</li><li>Photoshop</li><li>After Effects</li><li>Premiere Pro</li>
+      <li>Lightroom</li><li>Notion</li><li>Framer</li><li>Webflow</li>
+      <li>Spline</li><li>Claude</li><li>ChatGPT</li><li>Midjourney</li>
+    </ul>
+    <div class="creative-orbit"><div class="orbit-ring"></div><div class="orbit-core">IDEAS<br><em>into cinema.</em></div><div class="orbit-card orbit-0">AI FILMS</div><div class="orbit-card orbit-1">BRAND STORIES</div><div class="orbit-card orbit-2">VISUAL EFFECTS</div><div class="orbit-card orbit-3">SHORT FILMS</div><div class="orbit-card orbit-4">MUSIC VIDEOS</div><div class="orbit-card orbit-5">DOCUMENTARIES</div></div>
     <div class="universe__veil" id="uniVeil" aria-hidden="true"></div>
   </section>
 
@@ -154,12 +138,12 @@
       <canvas id="chronoStage" aria-hidden="true"></canvas>
 
       <h2 class="chrono__title" id="chronoTitle">
-        <span>A</span><span>Journey</span><span>Through</span><span>Craft</span>
+        <span>A</span><span>Journey</span><span>Through</span><span>Time</span>
       </h2>
       <p class="chrono__rail" aria-hidden="true">
         <i></i>
-        <span>Editing</span><span>AI Film</span><span>Design</span>
-        <span>Direction</span><span>Stories</span>
+        <span>Ideas</span><span>Experiences</span><span>People</span>
+        <span>Projects</span><span>Me</span>
         <i></i>
       </p>
 
@@ -189,10 +173,10 @@
       <div class="gallery__world">
         <div class="gallery__deck" id="galleryDeck"></div>
         <img class="gallery__person" id="galleryPerson"
-             src="public/people/lord-nishant-fullbody.png" alt="" draggable="false">
+             src="public/placeholders/portrait.svg" alt="" draggable="false">
       </div>
 
-      <h2 class="g-label g-label--projects" id="galleryTitle">Creative Work</h2>
+      <h2 class="g-label g-label--projects" id="galleryTitle">Projects</h2>
       <p class="g-label g-label--ideas" aria-hidden="true">
         Films<br>Stories<br>Experiences<br><b>Real Impact</b>
       </p>
@@ -200,7 +184,7 @@
         Scroll<br>Explore<br>Interact
       </p>
       <p class="g-label g-label--real" aria-hidden="true">
-        Creative<br>Disciplines<br>True<br>Stories
+        Real<br>Projects<br>Real<br>Stories
       </p>
       <p class="g-label g-label--tomorrow" aria-hidden="true">
         Designing<br>A Brighter<br>Tomorrow
@@ -209,79 +193,12 @@
     </div>
   </section>
 
-<section class="sample-work" id="sample-work" aria-labelledby="sampleTitle">
-  <div class="sample-work__inner"><p class="sample-work__eyebrow">SELECTED REELS</p><h2 id="sampleTitle">Sample Work</h2>
-  <div class="sample-work__grid"><article class="sample-card" data-sample="1">
-      <div class="sample-card__surface" tabindex="0" aria-label="Sample reel 1, video coming soon">
-        <video class="sample-card__video" muted loop playsinline preload="metadata" hidden aria-label="Sample reel 1"></video>
-        <div class="sample-card__placeholder"><span class="sample-card__number">01</span><span class="sample-card__play" aria-hidden="true">▷</span><h3>REEL 01</h3><p>Coming soon</p></div>
-      </div>
-      <a class="sample-card__link" aria-disabled="true">Instagram link coming soon <span aria-hidden="true">↗</span></a>
-    </article><article class="sample-card" data-sample="2">
-      <div class="sample-card__surface" tabindex="0" aria-label="Sample reel 2, video coming soon">
-        <video class="sample-card__video" muted loop playsinline preload="metadata" hidden aria-label="Sample reel 2"></video>
-        <div class="sample-card__placeholder"><span class="sample-card__number">02</span><span class="sample-card__play" aria-hidden="true">▷</span><h3>REEL 02</h3><p>Coming soon</p></div>
-      </div>
-      <a class="sample-card__link" aria-disabled="true">Instagram link coming soon <span aria-hidden="true">↗</span></a>
-    </article><article class="sample-card" data-sample="3">
-      <div class="sample-card__surface" tabindex="0" aria-label="Sample reel 3, video coming soon">
-        <video class="sample-card__video" muted loop playsinline preload="metadata" hidden aria-label="Sample reel 3"></video>
-        <div class="sample-card__placeholder"><span class="sample-card__number">03</span><span class="sample-card__play" aria-hidden="true">▷</span><h3>REEL 03</h3><p>Coming soon</p></div>
-      </div>
-      <a class="sample-card__link" aria-disabled="true">Instagram link coming soon <span aria-hidden="true">↗</span></a>
-    </article></div></div>
-</section>
-
-  <!-- CV details use an editorial chapter so the four existing animated scenes remain intact. -->
-  <section class="profile" id="profile" aria-labelledby="profileTitle">
-    <div class="profile__inner">
-      <p class="profile__eyebrow"><span>05 / Personal dossier</span><span>Lucknow, Uttar Pradesh, India</span></p>
-      <div class="profile__intro">
-        <h2 id="profileTitle">BEHIND<br>THE <em>FRAME.</em></h2>
-        <div class="profile__lede"><p>I am <span class="identity--light">Lord</span> <span class="identity--red">Nishant</span> — an AI Filmmaker, AI Artist, Video Editor, and Graphic Designer with 5+ years of experience in visual storytelling and creative production.</p><p>I’m a cinematography enthusiast who loves turning ideas into compelling visuals that tell stories, evoke emotions, and leave a lasting impression. From concept development and scriptwriting to storyboarding, cinematography, AI-driven visual production, and post-production, I enjoy bringing creative visions to life at every stage of the process.</p><p>Currently, I work as an AI Creator at StoryLab, where I combine artistic vision with emerging technologies to craft cinematic visuals, innovative campaigns, and compelling brand experiences that push the boundaries of creativity.</p></div>
-      </div>
-      <div class="profile__line" aria-hidden="true"></div>
-      <div class="profile__item">
-        <div class="profile__aside"><span>01</span><h3>Now / Experience</h3></div>
-        <div class="profile__content">
-          <h4>STORYLAB</h4>
-          <p class="profile__meta">AI Creator <span>Present</span></p>
-          <p>Creating AI-powered films, digital artwork and cinematic content from concept development and storyboarding through filming, editing and final delivery. Work includes brand and product shoots, direction, voiceover, on-camera content, photography, drone shoots and digital campaigns.</p>
-          <p class="profile__muted">5+ years of overall video-editing and creative experience.</p>
-        </div>
-      </div>
-      <div class="profile__item">
-        <div class="profile__aside"><span>02</span><h3>Expertise / 19 skills</h3></div>
-        <div class="profile__content profile__skills">
-          <div><h4>Filmmaking &amp; visual production</h4><p>AI Filmmaking &amp; AI Art <b>/</b> Cinematography <b>/</b> Direction <b>/</b> Drone Operations <b>/</b> Photography <b>/</b> Vlogging</p></div>
-          <div><h4>Post-production &amp; design</h4><p>Video Editing (5+ Years) <b>/</b> Graphic Designing <b>/</b> Design Thinking</p></div>
-          <div><h4>Script &amp; performance</h4><p>Script Writing <b>/</b> Voiceover Artist <b>/</b> Acting &amp; Modeling</p></div>
-          <div><h4>Brand &amp; digital content</h4><p>Product &amp; Brand Shoots <b>/</b> Social Media Influencing</p></div>
-          <div><h4>Professional practice</h4><p>Problem-Solving <b>/</b> Computer Literacy <b>/</b> Project Management Tools <b>/</b> Strong Communication <b>/</b> Time Management</p></div>
-        </div>
-      </div>
-      <div class="profile__item">
-        <div class="profile__aside"><span>03</span><h3>Certifications &amp; training</h3></div>
-        <div class="profile__content"><p class="profile__inline">ADCA <b>/</b> Video Editing <b>/</b> AI Filmmaking <b>/</b> AI Art &amp; Design <b>/</b> Graphic Designing <b>/</b> Cinematography <b>/</b> Script Writing <b>/</b> Vocal Training <b>/</b> Drone Operations</p></div>
-      </div>
-      <div class="profile__item">
-        <div class="profile__aside"><span>04</span><h3>Creative work / disciplines</h3></div>
-        <div class="profile__content"><p class="profile__inline">AI Short Films &amp; Conceptual Videos <b>/</b> Product &amp; Brand Shoots for Social Media Campaigns <b>/</b> Social Media Influencer Content &amp; Vlogging <b>/</b> Creative Graphic Designs &amp; AI Artworks <b>/</b> Script Writing, Direction &amp; Voiceover Projects <b>/</b> Photography &amp; Drone Shoots <b>/</b> Modeling, Acting &amp; On-Camera Projects</p><p class="profile__muted">These are areas of work from the CV, not individual titled case studies. Film samples and credits can be added when provided.</p></div>
-      </div>
-      <div class="profile__item">
-        <div class="profile__aside"><span>05</span><h3>Beyond the frame</h3></div>
-        <div class="profile__content"><p class="profile__inline">Singing <b>/</b> Dancing <b>/</b> Choreography <b>/</b> Photo Editing <b>/</b> Art <b>/</b> Craft <b>/</b> Making Science Projects <b>/</b> Travel &amp; Exploration <b>/</b> Social Media Content Creation</p><p class="profile__meta">Languages: English / Hindi</p></div>
-      </div>
-      <div class="profile__end"><span class="profile__signature"><b class="identity--light">LORD</b> <b class="identity--red">NISHANT</b></span><div class="profile__actions"><a href="mailto:nishantthewine@gmail.com">TELL ME YOUR STORY <span aria-hidden="true">↗</span></a><a href="https://wa.me/919151405840?text=Hi%20Nishant%21%20I%20came%20across%20your%20portfolio%20and%20would%20love%20to%20connect%20with%20you%20about%20a%20creative%20project.%20Looking%20forward%20to%20hearing%20from%20you%21" class="profile__whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat with Lord Nishant on WhatsApp at +91 91514 05840">WHATSAPP · +91 91514 05840 <span aria-hidden="true">↗</span></a></div></div>
-    </div>
-  </section>
-
 </main>
 
 <!-- ====================================================================== -->
 <footer class="fin" id="fin" aria-label="Closing">
   <div class="fin__pin">
-  <h2 class="sr-only">Lord Nishant — Get in touch</h2>
+  <h2 class="sr-only">[Your Name]</h2>
 
   <div class="fin__stage1" id="finStage1">
     <canvas id="finBack" aria-hidden="true"></canvas>
@@ -293,7 +210,7 @@
     <blockquote class="f-cap f-cap--quote">
       &ldquo;Your<br>story.<br>Beautifully<br>told.&rdquo;
     </blockquote>
-    <p class="f-cap f-cap--blw" aria-hidden="true"><span class="identity--light">Lord</span><br><span class="identity--red">Nishant&rsquo;s</span><br>World</p>
+    <p class="f-cap f-cap--blw" aria-hidden="true">A<br>Filmmaker&rsquo;s<br>World</p>
     <p class="f-cap f-cap--tr" aria-hidden="true">
       Same<br>Passion<br>A Brighter<br>Tomorrow
     </p>
@@ -309,17 +226,17 @@
   </figure>
 
   <div class="fin__bar">
-    <a href="mailto:nishantthewine@gmail.com">Let's work together</a>
-    <nav class="fin__soc" aria-label="Contact details">
-      <a href="mailto:nishantthewine@gmail.com">Email</a>
-      <a href="https://wa.me/919151405840?text=Hi%20Nishant%21%20I%20came%20across%20your%20portfolio%20and%20would%20love%20to%20connect%20with%20you%20about%20a%20creative%20project.%20Looking%20forward%20to%20hearing%20from%20you%21" target="_blank" rel="noopener noreferrer" aria-label="Chat with Lord Nishant on WhatsApp at +91 91514 05840">WhatsApp · +91 91514 05840</a>
-      <span title="Lucknow, Uttar Pradesh, India">Lucknow, India</span>
+    <a href="#" data-nav>Contact</a>
+    <nav class="fin__soc" aria-label="Social">
+      <a href="#" rel="me">Instagram</a>
+      <a href="#" rel="me">Behance</a>
+      <a href="#" rel="me">LinkedIn</a>
     </nav>
-    <small class="fin__c">&copy; 2026 <span class="identity--light">Lord</span> <span class="identity--red">Nishant</span> &mdash; All rights reserved</small>
+    <small class="fin__c">&copy; 2026 [Your Name] &mdash; All rights reserved</small>
   </div>
   </div>
 </footer>
 
 <script type="module" src="src/main.js"></script>
-<script type="module" src="custom.js"></script><script type="module" src="src/text-lens.js"></script><script type="module" src="src/sample-work.js"></script></body>
+<script src="custom.js"></script></body>
 </html>
