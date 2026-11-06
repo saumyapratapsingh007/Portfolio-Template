@@ -1,0 +1,59 @@
+/* Explicit media formats, independent of device orientation. */
+/* The transparent hero spacer must not intercept the menu underneath. */
+.flow { pointer-events:none; }
+.flow > :not(.hero-spacer) { pointer-events:auto; }
+.sample-work__grid { grid-template-columns:repeat(2,minmax(0,1fr)); align-items:start; }
+.sample-card[data-sample="1"] .sample-card__surface,
+.sample-card[data-sample="2"] .sample-card__surface { aspect-ratio:16/9; }
+.sample-card[data-sample="3"] { grid-column:1/-1; width:min(100%,360px); justify-self:center; }
+.sample-card[data-sample="3"] .sample-card__surface { aspect-ratio:9/16; }
+.sample-card__video { display:block; position:absolute; inset:0; }
+.sample-card__link { justify-content:flex-start; flex-wrap:wrap; gap:0 .3em; }
+.mobile-projects,.mobile-journey { display:none; }
+
+@media (max-width:900px) {
+  /* Natural document height avoids cropped or overlapping poster scenes. */
+  .chrono,.gallery { height:auto; }
+  .chrono__pin,.gallery__pin { position:relative; height:auto; overflow:visible; }
+  .chrono__pin > :not(.mobile-journey),
+  .gallery__pin > :not(.mobile-projects) { display:none!important; }
+  .mobile-projects,.mobile-journey { display:block; padding:56px clamp(16px,5vw,36px); }
+  .mobile-projects h2,.mobile-journey h2 { margin:0 0 28px; font:400 clamp(32px,7vw,56px)/1.15 var(--disp); color:var(--paper); }
+  .mobile-projects__grid,.mobile-journey ol { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; padding:0; margin:0; list-style:none; }
+  .mobile-project.g-card { display:block; position:relative; inset:auto; width:100%; opacity:1; transform:none; color:var(--paper); background:#151418; border:1px solid #bba27c55; border-radius:10px; overflow:hidden; text-align:left; }
+  .mobile-project img { width:100%; aspect-ratio:4/3; object-fit:contain; background:#101114; }
+  .mobile-project > span { display:block; padding:14px 12px; font:500 14px/1.4 var(--ui); letter-spacing:.06em; }
+  .mobile-project:focus-visible { outline:2px solid var(--ink-hot); outline-offset:4px; }
+  .mobile-journey li { min-width:0; padding:12px; background:#151418; border:1px solid #bba27c44; border-radius:10px; }
+  .mobile-journey img { display:block; width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:6px; }
+  .mobile-journey h3 { font:500 16px/1.4 var(--ui); color:var(--ink-hot); }
+  .mobile-journey p { font:400 15px/1.6 var(--ui); color:var(--paper); }
+  .universe { height:auto; min-height:0; padding:48px 20px 24px; }
+  .universe__title { position:relative; inset:auto; transform:none!important; width:100%; opacity:1; }
+  .universe__name { font-size:clamp(21px,5vw,34px); letter-spacing:.12em; }
+  .universe__sub { line-height:1.8; letter-spacing:.18em; }
+  .creative-orbit { position:relative; inset:auto; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin-top:32px; overflow:visible; }
+  .orbit-ring { display:none; }
+  .orbit-core { position:relative; inset:auto; transform:none; grid-column:1/-1; width:100%; max-width:none; font-size:clamp(36px,8vw,64px); margin-bottom:20px; }
+  .orbit-card { position:relative; inset:auto!important; transform:none!important; opacity:1!important; white-space:normal; display:grid; place-items:center; text-align:center; padding:18px 10px; font-size:13px; line-height:1.5; letter-spacing:.08em; min-height:72px; }
+  .orbit-motion { display:none; }
+  .profile__content,.profile__actions,.profile__lede { min-width:0; max-width:100%; overflow-wrap:anywhere; }
+  .profile__eyebrow { line-height:1.7; }
+  .profile__signature { flex-wrap:wrap; white-space:normal; }
+  .fin__bar { flex-direction:column; gap:12px; background:linear-gradient(transparent,#000 20%); padding:28px 18px max(20px,env(safe-area-inset-bottom)); letter-spacing:.12em; font-size:11px; opacity:1; transform:none; }
+  .fin__soc { flex-wrap:wrap; justify-content:center; gap:8px 18px; }
+  .fin__soc a { display:inline-flex; align-items:center; min-height:44px; }
+  .fin__c { text-align:center; line-height:1.7; }
+  .hdr__burger { min-width:44px; min-height:44px; align-content:center; justify-content:center; }
+  dialog { max-height:85svh; overflow:auto; overflow-wrap:anywhere; }
+}
+
+@media (max-width:600px) {
+  .sample-work { padding:56px 16px; }
+  .sample-work__grid { grid-template-columns:1fr; max-width:100%; gap:26px; }
+  .sample-card[data-sample="3"] { width:min(100%,340px); }
+  .sample-card__surface:hover { --lift:0px; }
+  .sample-card__link { min-height:48px; }
+  .mobile-projects__grid,.mobile-journey ol { grid-template-columns:1fr; }
+  .hero__portrait { height:52svh; max-width:88%; bottom:5%; }
+}

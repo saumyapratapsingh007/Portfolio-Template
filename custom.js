@@ -66,7 +66,7 @@ document.addEventListener('click', (event) => {
   const motionButton = document.getElementById('orbitMotion');
   // This scene autoplays by explicit owner preference; visitors can still pause it.
   let motionOverride = true;
-  const motionEnabled = () => motionOverride;
+  const motionEnabled = () => motionOverride && !matchMedia('(max-width: 900px)').matches;
   function updateMotionControl() {
     if (!motionButton) return;
     const enabled = motionEnabled();
