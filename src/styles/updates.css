@@ -23,6 +23,7 @@ html{scroll-behavior:auto}
 .sample-card p{font-size:13px;color:var(--dim);letter-spacing:.06em}
 .sample-card__video{width:100%;height:100%;object-fit:contain;background:#000}
 .sample-card__video[hidden]{display:none}
+.sample-card__drive{display:block;width:100%;height:100%;border:0;background:#000}
 .sample-card__placeholder[hidden]{display:none}
 .sample-card__link{display:flex;justify-content:space-between;gap:10px;padding:22px 0;font:14px Oswald,sans-serif;letter-spacing:.05em;text-decoration:none;color:var(--ink-hot);border-bottom:1px solid #bba27c44}
 .sample-card__link[aria-disabled=true]{color:var(--dim);cursor:default}

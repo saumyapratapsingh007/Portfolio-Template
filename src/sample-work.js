@@ -23,6 +23,26 @@ document.querySelectorAll('.sample-card').forEach((card, i) => {
       }
     } catch {}
   }
+  // Drive embeds keep playback on this page without using GitHub/Vercel media storage.
+  if (data?.driveFileId) {
+    const id = data.driveFileId;
+    if (/^[a-zA-Z0-9_-]+$/.test(id)) {
+      const frame = document.createElement('iframe');
+      frame.className = 'sample-card__drive';
+      frame.src = `https://drive.google.com/file/d/${id}/preview`;
+      frame.title = `${data.title || 'Portfolio video'} — Google Drive video player`;
+      frame.loading = 'lazy';
+      frame.allow = 'autoplay; fullscreen; picture-in-picture';
+      frame.allowFullscreen = true;
+      frame.referrerPolicy = 'strict-origin-when-cross-origin';
+      video.hidden = true;
+      surface.querySelector('.sample-card__placeholder').hidden = true;
+      surface.removeAttribute('tabindex');
+      surface.setAttribute('aria-label', frame.title);
+      surface.append(frame);
+    }
+    return;
+  }
   if (!data?.video) return;
   video.src=data.video;video.hidden=false;video.controls=true;video.autoplay=!reduce.matches;
   surface.querySelector('.sample-card__placeholder').hidden=true;
